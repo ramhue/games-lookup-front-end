@@ -1,0 +1,27 @@
+    <h1>Consoles</h1>    
+    <table class="table table-dark sticky-header table-striped table-bordered table-sm">
+        <thead class="thead-light">
+            <tr>
+             <th>
+                Console
+             </th>   
+             <th>
+                Manufacturer             
+            </th>
+            <th id=2>
+                Info
+            </th>
+            <th>
+                Release
+            </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let console of consoles">
+                <td> {{console.consolename}}</td>
+                <td> {{console.publisher.publisher}}</td>
+                <td> {{console.console_desc}}</td>
+                <td> {{console.releaseDate | date:'shortDate'}}</td>
+            </tr>
+        </tbody>
+    </table>

@@ -1,0 +1,23 @@
+table{
+    position: relative;
+
+}
+th{
+    position: sticky;
+    text-align: center;
+    top: 0;
+    background-color: white;
+}
+div{
+    background-color:#333333;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+h1{
+    text-align: center;
+    color:white;
+    font-family: fantasy;
+    margin-bottom: 0;
+    background-color: #555555;
+}

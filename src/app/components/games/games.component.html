@@ -1,0 +1,54 @@
+ 
+    <table class="table table-dark table-striped table-bordered table-sm">
+        <thead class="thead-light">
+            <tr>
+             <th>
+                Name
+             </th>   
+             <th>
+                Info             
+            </th>
+            <th id=2>
+                Console
+            </th>
+            <th>
+                Publisher
+            </th>
+            <th>
+                Developer
+            </th>
+            <th>
+                Release
+            </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of games">
+                <td>{{x.gameName}}</td>
+                <td>{{x.game_desc | uppercase}}</td>
+                <td>{{x.consoleModel.consolename}}</td>
+                <td>{{x.publisherModel.publisher | uppercase}}</td>
+                <td>{{x.developer.developer}}</td>
+                <td>{{x.releaseDate | date: 'longDate'}} </td>
+            </tr>
+        </tbody>
+</table>
+<div>
+        
+        <label style="color: white; padding-left: 10px; padding-top: 2px;padding-right: 5px;"> Filter by console:</label>
+        <select (change) = "changeConsole($event.target.value)">
+            <option value = "all">ALL</option>
+            <option *ngFor="let c of cons" [value]="c.consolename">{{c.consolename}}</option>            
+        </select>
+        <label style="color: white; padding-left: 10px; padding-top: 2px;padding-right: 5px;"> Filter by Publisher:</label>
+        <select (change) = "changePublisher($event.target.value)">
+            <option value = "all">ALL</option>
+            <option *ngFor="let x of pubs" [value]="x.name">{{x.name}}</option>          
+        </select>
+        <h1>{{consoleName}}</h1>
+        <h2 style="color:white;text-align:center">{{publish}}</h2>
+    <button class="btn btn-sm text" id="button1" [disabled]="onfirstpage" (click) = "previousPage()"><< Back</button>
+    <ins style="color: white;">Page {{page}}</ins>
+    <button class="btn btn-sm text"id="button2" [disabled]= "onlastpage" (click) = "nextPage()">Next >></button> 
+</div>
+

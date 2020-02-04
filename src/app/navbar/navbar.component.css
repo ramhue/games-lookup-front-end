@@ -1,0 +1,14 @@
+nav{
+    background-color: rgba(22, 51, 105, 0.801);
+}
+.navbar a{
+    color: white;
+}
+.dropdown-item{
+    background-color: #6f42c1;
+    border-top: 1px solid white;
+
+}
+div.dropdown-menu.show{
+    padding: 0;
+}
